@@ -106,7 +106,7 @@ public class ApplicationServiceImpl implements ApplicationService {
                     showProfileDetails(account);
                     break;
                 case 'e':
-                    System.out.println("thanks fro your time");
+                    System.out.println("thanks for your time");
                     break;
                 default:
                     counter++;
@@ -128,22 +128,81 @@ public class ApplicationServiceImpl implements ApplicationService {
 
     private void showProfileDetails(Account account) {
         // TODO call account service to showProfileDetails
+        if (account != null) {
+            account = accountService.showProfileDetails(account);
+            System.out.println("UserName: " + account.getUserName());
+            System.out.println("Balance: " + account.getBalance());
+
+        } else {
+            System.out.println("Account not found.");
+        }
+
     }
 
     private void transfer(Account account) {
         // TODO take username of user you need to transfer
         // TODO take money that you need to transfer
         // TODO call account service to transfer
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the username to transfer to: ");
+        String toUsername = scanner.nextLine();
+
+        System.out.print("Enter the amount to transfer: ");
+        double amount = scanner.nextDouble();
+
+        boolean success =  accountService.transfer(account, toUsername, amount);
+        if (success) {
+            System.out.println("Transfer successful.");
+        } else {
+            System.out.println("Transfer failed. Check your balance Or receiver name");
+        }
+
+
+
     }
 
     private void withdraw(Account account) {
         // TODO take money from user
         // TODO call account service to withdraw
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the amount to withdraw: ");
+        double amount = scanner.nextDouble();
+
+        if (amount <= 0) {
+            System.out.println("Invalid amount. Please enter a value greater than 0.");
+            return;
+        }
+
+        boolean success = accountService.withdraw(account, amount);
+
+        if (success) {
+            System.out.println("Withdrawal successful.");
+        } else {
+            System.out.println("Withdrawal failed. Check your balance.");
+        }
     }
+
 
     private void deposit(Account account) {
         // TODO take money from user
         // TODO call account service to deposit
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the amount to deposit: ");
+        double amount = scanner.nextDouble();
+
+        if (amount <= 0) {
+            System.out.println("Invalid amount. Please enter a positive number.");
+            return;
+        }
+
+        boolean success = accountService.deposit(account, amount);
+
+        if (success) {
+            System.out.println("Successfully deposited " + amount + " into your account.");
+        } else {
+            System.out.println("Deposit failed. Please check the account and try again.");
+        }
     }
 
     private void createAccount() {
