@@ -1,0 +1,123 @@
+/* Techno Items Project - Light Theme */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&family=Exo:wght@300;400;600&display=swap');
+
+body {
+    background: linear-gradient(to right, #f0f8ff, #e6f7ff);
+    color: #333;
+    font-family: 'Exo', sans-serif;
+    margin: 20px;
+    padding: 0;
+}
+
+/* Header Styling */
+header {
+    background: #4a90e2;
+    padding: 20px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    border-radius: 10px;
+}
+
+/* Navigation */
+nav {
+    background: #d1eaff;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+nav a {
+    color: #0055aa;
+    padding: 10px 15px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background: #66aaff;
+    color: #fff;
+    padding: 10px 15px;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: #ffffff;
+    color: #333;
+    box-shadow: 0px 0px 10px #4a90e2;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+th {
+    background: #4a90e2;
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    color: white;
+}
+
+td {
+    font-size: 16px;
+}
+
+/* Buttons */
+button {
+    background: #007bff;
+    border: none;
+    padding: 10px 20px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+}
+
+button:hover {
+    background: #0055aa;
+}
+
+/* Forms */
+form {
+    background: #e6f7ff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #4a90e2;
+    margin: 20px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #4a90e2;
+    background: #ffffff;
+    color: #333;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+input::placeholder, textarea::placeholder {
+    color: #888;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #4a90e2;
+    color: #ffffff;
+    border-radius: 10px;
+    margin-top: 20px;
+}
