@@ -1,0 +1,55 @@
+Task: Compare and write the differences between List and Vector in Java.
+
+List:
+	Thread Safety : Not inherently thread-safe
+	Performance : Fast - no Synchronization
+	Synchronization : Not Supported
+
+Vector:
+	Thread Safety : thread-safe by default
+	Performance : Slow due to Synchronization
+	Synchronization : Supported
+	
+---------------------------------------------------------------------------
+Task: Compare and write the differences between HashSet and LinkedHashSet.
+
+HashSet:
+	Order of Elements : Does not maintain any order of elements.
+	Performance : faster for basic operations like add, remove, and contains, since it doesn't maintain order.
+	Use cases : - When you need a collection of unique elements and don’t care about order.
+				- Ideal for fast lookups and set operations like union, intersection, etc.
+				
+LinkedHashSet : 
+	Order of Elements : Preserves insertion order. Elements are returned in the order they were added.
+	Performance :  slower due to the overhead of maintaining a doubly-linked list to track insertion order.
+	Use cases : - When you need uniqueness and want to preserve the order of insertion.
+				- Useful in caching, maintaining predictable iteration, or when order matters in UI or logs.
+	
+---------------------------------------------------------------------------
+Task: Compare and write the differences between String, StringBuilder, and StringBuffer.
+
+String:
+	Mutability : Immutable – once created, cannot be changed.
+	Thread safety :Thread-safe by design (immutable). 
+	Performance : Slow for repeated modifications (creates new objects).
+	When to use each : Use when the value won’t change (e.g., constants, keys, messages).
+
+StringBuilder:
+	Mutability : Mutable – content can be modified.
+	Thread safety : Not thread-safe – no synchronization.
+	Performance : Fastest in single-threaded contexts.
+	When to use each :  Use in single-threaded scenarios where frequent string modifications are needed (e.g., loops, text processing).
+
+StringBuffer:
+	Mutability : Mutable – content can be modified.
+	Thread safety : Thread-safe – methods are synchronized.
+	Performance : Slower than StringBuilder due to synchronization overhead.
+	When to use each :  Use in multi-threaded environments where thread safety is essential (e.g., shared logging, concurrent string manipulation).
+	
+
+				
+				
+	
+				
+
+

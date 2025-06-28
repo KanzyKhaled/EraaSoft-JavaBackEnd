@@ -1,0 +1,15 @@
+Why destroy() isn't called for prototype beans
+- Spring creates prototype beans when you request them from the container.
+- But after handing them to you, Spring lets go—it doesn’t keep track of them.
+- Because of that, Spring doesn’t know when you're done with the bean, so it cannot call destroy().
+In contrast, for singleton beans:
+- Spring creates and caches one instance.
+- It manages the lifecycle from beginning to end.
+- So when the application context shuts down, Spring knows it’s time to call destroy() automatically.
+
+
+You manually destroy it when you're done using it. Like this:
+context.getBeanFactory().destroyBean(person);
+
+Or if you’re using Java config:
+((ConfigurableApplicationContext) context).getBeanFactory().destroyBean(person);
