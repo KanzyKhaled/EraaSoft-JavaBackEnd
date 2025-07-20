@@ -43,7 +43,7 @@ public class EraaSoftSchoolController {
         return eraaSoftSchoolService.getAll();
     }
 
-    //    @GetMapping("/student/{id}")
+//    @GetMapping("/student/{id}")
     @GetMapping("/student")
     EraaSoftSchool getStudentById(@RequestParam Long id) {
         return eraaSoftSchoolService.getById(id);
